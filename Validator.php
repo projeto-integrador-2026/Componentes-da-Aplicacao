@@ -82,17 +82,6 @@ class Validator
     }
 
     /**
-     * Valida padrão regex customizado
-     */
-    public function pattern(string $field, string $value, string $pattern, string $message): self
-    {
-        if (!empty($value) && !preg_match($pattern, $value)) {
-            $this->errors[$field] = $message;
-        }
-        return $this;
-    }
-
-    /**
      * Valida se o valor está em uma lista de opções
      */
     public function in(string $field, mixed $value, array $options, ?string $message = null): self
